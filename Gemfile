@@ -15,6 +15,8 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'bootsnap', require: false
 gem 'semantic-ui-sass'
 gem 'sassc-rails'
+gem 'bcrypt', '~> 3.1', '>= 3.1.12'
+gem 'hirb'
 
 group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
