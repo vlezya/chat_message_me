@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  before_action :require_logged_in, only: [:new, :create]
+
   def new; end
 
   def create
@@ -17,5 +19,14 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     flash[:success] = 'You have successfuly logout'
     redirect_to login_path
+  end
+
+  private
+
+  def require_logged_in
+    if logged_in?
+      flash[:error] = 'You are alredy logged in'
+      redirect_to root_path
+    end
   end
 end
