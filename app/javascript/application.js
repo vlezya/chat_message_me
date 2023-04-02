@@ -7,10 +7,3 @@ import "semantic-ui"
 $(document).on('turbo:load', function() {
   $('.ui.dropdown').dropdown();
 })
-
-$('.message .close').on('click', 'turbo:load', function() {
-    $(this)
-      .closest('.message')
-      .transition('fade')
-    ;
-  });
