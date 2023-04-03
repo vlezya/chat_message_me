@@ -11,15 +11,16 @@
         <%= render @messages %>
       </div>
     </div>
+
     <div class="extra content">
-      <form class="ui reply form">
+      <%= form_with(model: @message, url: message_path, class: 'ui reply form') do |f|  %>
         <div class="field">
           <div class="ui fluid icon input">
-            <input type="text" placeholder="Enter a message">
-            <i class="bordered inverted red icon edit"></i>
+            <%= f.text_field :body, placeholder: 'Enter a message... '%>
+            <%= f.button "<i class='bordered inverted red icon edit'></i>".html_safe %>
           </div>
         </div>
-      </form>
+      <% end %>
     </div>
   </div>
  </div>
