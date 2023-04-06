@@ -5,9 +5,20 @@ import * as jquery from "jquery"
 import "semantic-ui"
 import "channels"
 
+
+$(document).on('turbo:load', function() {
+  submit_message =  function() {
+    $('#message_body').on('keydown', function(e) {
+      if (e.keyCode == 13) {
+        $('button').click();
+        e.target.value = "";
+      };
+    });
+  };
+})
+
 $(document).on('turbo:load', function() {
   $('.ui.dropdown').dropdown();
-  scroll_bottom();
 })
 
 // add auto scroll to bottom in messages
